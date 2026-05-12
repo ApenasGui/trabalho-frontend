@@ -1,0 +1,85 @@
+{
+  "filmes": [
+    { "id": 1, 
+    "titulo": "Inception", 
+    "genero": "Ficção Científica", 
+    "disponivel": true, 
+    "ano": 2010 },
+    { "id": 2, 
+    "titulo": "The Dark Knight", 
+    "genero": "Ação", 
+    "disponivel": true, 
+    "ano": 2008 },
+    { "id": 3, 
+    "titulo": "Interstellar", 
+    "genero": "Ficção Científica", 
+    "disponivel": false, 
+    "ano": 2014 },
+    { "id": 4, 
+    "titulo": "The Matrix", 
+    "genero": "Ficção Científica", 
+    "disponivel": true, 
+    "ano": 1999 },
+    { "id": 5, 
+    "titulo": "Pulp Fiction", 
+    "genero": "Crime",
+    "disponivel": false, 
+    "ano": 1994 }
+  ],
+
+  "jogos": [
+
+    { 
+    "id": 1, 
+    "titulo": "The Last of Us Part I", 
+    "plataforma": "PS5", 
+    "genero": "Aventura", 
+    "disponivel": true 
+    },
+
+    { 
+    "id": 2, 
+    "titulo": "Cyberpunk 2077", 
+    "plataforma": "PS5",
+    "genero": "RPG", 
+    "disponivel": false 
+    },
+
+    { 
+    "id": 3, 
+    "titulo": "God of War (2018)", 
+    "plataforma": "PS5", 
+    "genero": "Ação", 
+    "disponivel": true 
+    },
+
+    { 
+    "id": 4, 
+    "titulo": "Minecraft", 
+    "plataforma": [
+            "PC",
+            "XBOX S",
+            "XBOX X",
+            "PS4"
+    ], 
+    "genero": "Sandbox", 
+    "disponivel": true 
+    },
+
+    { "id": 5, 
+    "titulo": "The Witcher 3", 
+    "plataforma": [
+        "PC",
+        "PS4",
+        "PS5"
+    ], 
+    "genero": [
+        "RPG",
+        "AÇÃO",
+        "AVENTURA",
+        "HISTÓRIA"
+    ],
+    "disponivel": true
+    }
+  ]
+}
