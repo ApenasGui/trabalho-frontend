@@ -23,7 +23,7 @@
 - [Fluxo de Trabalho](#-fluxo-de-trabalho)
 - [Padrão de Commits](#-padrão-de-commits)
 - [Testes](#-testes)
-- [Figma](#-wireframe_figma)
+- [Figma](#-wireframe-figma)
 
 ---
 
@@ -331,6 +331,8 @@ src/tests/
 Acesse o wireframe e identidade visual do projeto no Figma:
 
 [Locadora — Wireframe](https://www.figma.com/design/rkQ5q20CbDefD4eDt6uwDx/Locadora-%E2%80%94-Wireframe?node-id=3809-92&t=X8rXuA8TUmE0aZC0-1)
+
+<sub>⚠️ Wireframe ainda em aprimoramento e sujeito a alterações.</sub>
 
 ---
 
