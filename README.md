@@ -23,6 +23,7 @@
 - [Fluxo de Trabalho](#-fluxo-de-trabalho)
 - [Padrão de Commits](#-padrão-de-commits)
 - [Testes](#-testes)
+- [Figma](#-wireframe_figma)
 
 ---
 
@@ -325,13 +326,7 @@ src/tests/
     └── validacaoFormulario.test.jsx  # Fluxo completo de validação
 ```
 
-## Locadora
-
-Sistema de gerenciamento de filmes e jogos.
-
----
-
-## Wireframe Figma
+# Wireframe Figma
 
 Acesse o wireframe e identidade visual do projeto no Figma:
 
