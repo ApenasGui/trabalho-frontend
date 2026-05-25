@@ -326,7 +326,7 @@ src/tests/
     └── validacaoFormulario.test.jsx  # Fluxo completo de validação
 ```
 
-# Wireframe Figma
+## 🎨 Wireframe Figma
 
 Acesse o wireframe e identidade visual do projeto no Figma:
 
