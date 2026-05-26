@@ -1,4 +1,5 @@
-import {getJogos, getJogoById, addJogo, mostrarIdPeloTitulo, deleteJogo} from "./api";
+import { getFilmes } from "./api-filmes";
+import {getJogos, getJogoById, addJogo, mostrarIdPeloTitulo, deleteJogo} from "./api-jogos";
 import { test, expect, describe, afterEach } from "vitest";
 
 describe('getJogos', () => {
@@ -62,3 +63,10 @@ describe('getJogos', () => {
     });
 
 });
+
+describe('getFilmes', () => {
+    test('deve retonar uma lista de filmes', async () => {
+        const listaFilmes = await getFilmes();
+        expect(Array.isArray(listaFilmes)).toBe(true);
+    })
+})
