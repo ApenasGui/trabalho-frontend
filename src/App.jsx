@@ -5,6 +5,7 @@ import Layout from "./layout/Layout";
 import { useAuth } from "./contexts/AuthContext";
 import Error404 from "./pages/Error404";
 import Login from "./pages/Login";
+import Cadastro from "./pages/Cadastro";
 
 export default function App() {
 
@@ -15,8 +16,8 @@ export default function App() {
         {logged ? (
         <Route path="/" element={<Layout />}> {}
           <Route index element={<Home />} />
-          <Route path="list" element={<List />} />
-          <Route path="*" element={<Error404 />}/>
+          <Route path="listagem" element={<List />} />
+          <Route path="cadastro" element={<Cadastro />} />
         </Route>
         ) : (
           <>
