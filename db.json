@@ -1,72 +1,38 @@
 {
-  "filmes": [
-    {
-      "id": "1",
-      "titulo": "Inception",
-      "genero": "Ficção Científica",
-      "disponivel": true,
-      "ano": 2010
-    },
-    {
-      "id": "2",
-      "titulo": "The Dark Knight",
-      "genero": "Ação",
-      "disponivel": true,
-      "ano": 2008
-    },
-    {
-      "id": "3",
-      "titulo": "Interstellar",
-      "genero": "Ficção Científica",
-      "disponivel": false,
-      "ano": 2014
-    },
-    {
-      "id": "4",
-      "titulo": "The Matrix",
-      "genero": "Ficção Científica",
-      "disponivel": true,
-      "ano": 1999
-    },
-    {
-      "id": "5",
-      "titulo": "Pulp Fiction",
-      "genero": "Crime",
-      "disponivel": false,
-      "ano": 1994
-    }
-  ],
   "jogos": [
     {
-      "id": "1",
       "titulo": "The Last of Us Part I",
       "plataforma": "PS5",
       "genero": "Aventura",
-      "disponivel": true
+      "quantidade": 2,
+      "disponivel": true,
+      "id": "fO-ppTeg6dI"
     },
     {
-      "id": "2",
       "titulo": "Cyberpunk 2077",
       "plataforma": "PS5",
       "genero": "RPG",
-      "disponivel": false
+      "quantidade": 1,
+      "disponivel": false,
+      "id": "NfYpGfVp1c8"
     },
     {
-      "id": "3",
       "titulo": "God of War (2018)",
       "plataforma": "PS5",
       "genero": "Ação",
-      "disponivel": true
+      "quantidade": 2,
+      "disponivel": true,
+      "id": "hZ1lOEOmG5A"
     },
     {
-      "id": "4",
       "titulo": "Minecraft",
       "plataforma": "XBOXS",
       "genero": "Sandbox",
-      "disponivel": true
+      "quantidade": 5,
+      "disponivel": true,
+      "id": "5c_NsqXMGHQ"
     },
     {
-      "id": "DJPq3095ja_",
       "titulo": "The Witcher 3",
       "plataforma": "PS4",
       "genero": [
@@ -74,7 +40,17 @@
         "AÇÃO",
         "AVENTURA"
       ],
-      "disponivel": true
+      "quantidade": 1,
+      "disponivel": true,
+      "id": "8zNAlfLXkHc"
+    },
+    {
+      "titulo": "Banishers of New Eden",
+      "genero": "Ação e Rpg",
+      "quantidade": "2",
+      "plataforma": "PS5",
+      "disponivel": true,
+      "id": "tJImY5XwBYg"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

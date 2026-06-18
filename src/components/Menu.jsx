@@ -11,7 +11,10 @@ export default function Menu(){
                 <NavLink to="/">Home</NavLink>
             </li>
             <li>
-                <NavLink to="/list">List</NavLink>
+                <NavLink to="/listagem">Listagem</NavLink>
+            </li>
+            <li>
+                <NavLink to="/cadastro">Cadastro</NavLink>
             </li>
             <li>
                 <Link to="/login">Login</Link>
