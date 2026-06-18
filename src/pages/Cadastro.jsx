@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext";
 import {addJogo} from "../services/api-jogos";
 import { useItem } from "../contexts/ItemContext";
 

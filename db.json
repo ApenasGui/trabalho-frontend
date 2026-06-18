@@ -51,6 +51,22 @@
       "plataforma": "PS5",
       "disponivel": true,
       "id": "tJImY5XwBYg"
+    },
+    {
+      "titulo": "Slime Rancher",
+      "genero": "Simulador",
+      "quantidade": "3",
+      "plataforma": "PC e PS4",
+      "disponivel": true,
+      "id": "Hsz1ODZSlng"
+    },
+    {
+      "titulo": "teste",
+      "genero": "teste",
+      "quantidade": "1",
+      "plataforma": "teste",
+      "disponivel": true,
+      "id": "If6967ERC78"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
