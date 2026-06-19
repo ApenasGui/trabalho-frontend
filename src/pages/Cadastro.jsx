@@ -45,6 +45,12 @@ export default function Cadastro() {
 
     setFormData({ ...formData, [name]: novoValor });
 
+    if(name === "disponivel"){
+      novoValor.disponivel = Number(value) > 0;
+    }
+
+    setFormData(novoValor)
+
     if (touched[name] && camposObrigatorios.includes(name)) {
       setErros((prev) => ({
         ...prev,

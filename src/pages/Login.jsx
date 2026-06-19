@@ -79,7 +79,7 @@ export default function Login() {
       <h1>Login</h1>
 
       <form onSubmit={handleSubmit} noValidate>
-        <div>
+        <section>
           <label>E-mail</label>
           <input
             type="email"
@@ -90,9 +90,9 @@ export default function Login() {
             onBlur={handleBlur}
           />
           {touched.email && erros.email && <span>{erros.email}</span>}
-        </div>
+        </section>
 
-        <div>
+        <section>
           <label>Senha</label>
           <input
             type="password"
@@ -103,7 +103,7 @@ export default function Login() {
             onBlur={handleBlur}
           />
           {touched.senha && erros.senha && <span>{erros.senha}</span>}
-        </div>
+        </section>
 
         <label>
           <input

@@ -12,15 +12,15 @@
       "titulo": "Cyberpunk 2077",
       "plataforma": "PS5",
       "genero": "RPG",
-      "quantidade": 1,
-      "disponivel": false,
+      "quantidade": 2,
+      "disponivel": true,
       "id": "NfYpGfVp1c8"
     },
     {
       "titulo": "God of War (2018)",
       "plataforma": "PS5",
       "genero": "Ação",
-      "quantidade": 2,
+      "quantidade": 1,
       "disponivel": true,
       "id": "hZ1lOEOmG5A"
     },
@@ -28,7 +28,7 @@
       "titulo": "Minecraft",
       "plataforma": "XBOXS",
       "genero": "Sandbox",
-      "quantidade": 5,
+      "quantidade": 1,
       "disponivel": true,
       "id": "5c_NsqXMGHQ"
     },
@@ -40,24 +40,24 @@
         "AÇÃO",
         "AVENTURA"
       ],
-      "quantidade": 0,
-      "disponivel": false,
+      "quantidade": 1,
+      "disponivel": true,
       "id": "8zNAlfLXkHc"
     },
     {
       "titulo": "Banishers of New Eden",
       "genero": "Ação e Rpg",
-      "quantidade": "2",
+      "quantidade": 0,
       "plataforma": "PS5",
-      "disponivel": true,
+      "disponivel": false,
       "id": "tJImY5XwBYg"
     },
     {
       "titulo": "Slime Rancher",
       "genero": "Simulador",
-      "quantidade": 2,
+      "quantidade": 0,
       "plataforma": "PC e PS4",
-      "disponivel": true,
+      "disponivel": false,
       "id": "Hsz1ODZSlng"
     },
     {
@@ -71,7 +71,7 @@
     {
       "titulo": "Yakuza 0",
       "genero": "Beat'em Up",
-      "quantidade": 0,
+      "quantidade": 1,
       "plataforma": "PS4",
       "disponivel": false,
       "id": "zgCw-EprXAg"

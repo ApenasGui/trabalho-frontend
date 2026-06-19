@@ -95,7 +95,7 @@ export async function atualizarJogo(id, dados) {
 }
 
 export async function registrarAluguel(usuarioId, alugueis) {
-  const response = await fetch(`${API_URL}/${usuarioId}`, {
+  const response = await fetch(`${API_URL}/usuarios/${usuarioId}`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ alugueis }),

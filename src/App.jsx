@@ -5,7 +5,7 @@ import { useAuth } from "./contexts/AuthContext";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Listagem from "./pages/Listagem";
-import RegistroUsuario from "./pages/RegistroUsuario";
+import AluguelUsuario from "./pages/AluguelUsuario";
 
 export default function App() {
 
@@ -18,11 +18,11 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="listagem" element={<Listagem />} />
           <Route path="cadastro" element={<Cadastro />} />
+          <Route path="meus-alugueis" element={<AluguelUsuario />} />
         </Route>
         ) : (
           <>
             <Route path="login" element={<Login />} />
-            <Route path="registrar" element={<RegistroUsuario />} />
           </>
         )}
       </Routes>

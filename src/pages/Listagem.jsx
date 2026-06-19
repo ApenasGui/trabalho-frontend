@@ -28,6 +28,10 @@ export default function Listagem() {
   async function handleAlugar(jogo) {
     if (!jogo.disponivel || alugandoId === jogo.id) return;
 
+    console.log("usuário:", usuario);
+    console.log("id do usuário:", usuario.id);
+    console.log("alugueis atuais:", usuario.alugueis);
+
     setAlugandoId(jogo.id);
     try {
       const novaQuantidade = jogo.quantidade - 1;
@@ -52,10 +56,11 @@ export default function Listagem() {
         prev.map((j) => (j.id === jogo.id ? jogoAtualizado : j))
       );
       setUsuario(usuarioAtualizado);
-    } catch {
-      setErro("Erro ao alugar o jogo. Tente novamente.");
+      localStorage.setItem("usuario", JSON.stringify(usuarioAtualizado));
+    } catch (err) {
+        alert(err.message)
     } finally {
-      setAlugandoId(null);
+        setAlugandoId(null);
     }
   }
 
@@ -64,7 +69,7 @@ export default function Listagem() {
 
   return (
     <>
-      <p className="flex justify-between items-center mb-4">
+      <section className="flex justify-between items-center mb-4">
         <h1 className="text-2xl font-bold">Jogos cadastrados</h1>
         <button
           onClick={() => navigate("/cadastro")}
@@ -72,7 +77,7 @@ export default function Listagem() {
         >
           + Novo jogo
         </button>
-      </p>
+      </section>
 
       {jogos.length === 0 ? (
         <p className="text-gray-500">Nenhum jogo cadastrado ainda.</p>
@@ -104,6 +109,7 @@ export default function Listagem() {
                 </td>
                 <td className="border px-4 py-2 text-center">
                   <button
+                    type="button"
                     onClick={() => handleAlugar(jogo)}
                     disabled={!jogo.disponivel || alugandoId === jogo.id}
                     title={jogo.disponivel ? "Alugar jogo" : "Jogo indisponível"}
