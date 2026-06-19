@@ -4,8 +4,8 @@
       "titulo": "The Last of Us Part I",
       "plataforma": "PS5",
       "genero": "Aventura",
-      "quantidade": 2,
-      "disponivel": true,
+      "quantidade": 0,
+      "disponivel": false,
       "id": "fO-ppTeg6dI"
     },
     {
@@ -40,8 +40,8 @@
         "AÇÃO",
         "AVENTURA"
       ],
-      "quantidade": 1,
-      "disponivel": true,
+      "quantidade": 0,
+      "disponivel": false,
       "id": "8zNAlfLXkHc"
     },
     {
@@ -55,7 +55,7 @@
     {
       "titulo": "Slime Rancher",
       "genero": "Simulador",
-      "quantidade": "3",
+      "quantidade": 2,
       "plataforma": "PC e PS4",
       "disponivel": true,
       "id": "Hsz1ODZSlng"
@@ -63,10 +63,34 @@
     {
       "titulo": "teste",
       "genero": "teste",
-      "quantidade": "1",
+      "quantidade": 0,
       "plataforma": "teste",
-      "disponivel": true,
+      "disponivel": false,
       "id": "If6967ERC78"
+    },
+    {
+      "titulo": "Yakuza 0",
+      "genero": "Beat'em Up",
+      "quantidade": 0,
+      "plataforma": "PS4",
+      "disponivel": false,
+      "id": "zgCw-EprXAg"
+    }
+  ],
+  "usuarios": [
+    {
+      "nome": "Guilherme Silva",
+      "email": "guilherme@email.teste",
+      "senha": "teste001",
+      "alugueis": [],
+      "id": "q4-_vsdb_34"
+    },
+    {
+      "nome": "Pedrinho",
+      "email": "pedro@email.teste",
+      "senha": "123456789",
+      "alugueis": [],
+      "id": "giCrS0R6ZRg"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

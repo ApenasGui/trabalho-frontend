@@ -83,3 +83,23 @@ export async function deleteJogo(titulo) {
         throw error;
     }
 }
+
+export async function atualizarJogo(id, dados) {
+  const response = await fetch(`${API_URL}/${id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(dados),
+  });
+  if (!response.ok) throw new Error("Erro ao atualizar jogo");
+  return response.json();
+}
+
+export async function registrarAluguel(usuarioId, alugueis) {
+  const response = await fetch(`${API_URL}/${usuarioId}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ alugueis }),
+  });
+  if (!response.ok) throw new Error("Erro ao registrar aluguel");
+  return response.json();
+}
