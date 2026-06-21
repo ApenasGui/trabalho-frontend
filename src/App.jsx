@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Listagem from "./pages/Listagem";
 import AluguelUsuario from "./pages/AluguelUsuario";
+import CadastroUsuario from "./pages/CadastroUsuario";
 
 export default function App() {
 
@@ -23,6 +24,7 @@ export default function App() {
         ) : (
           <>
             <Route path="login" element={<Login />} />
+            <Route path="cadastro-usuario" element={<CadastroUsuario />} />
           </>
         )}
       </Routes>

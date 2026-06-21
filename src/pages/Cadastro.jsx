@@ -106,37 +106,37 @@ export default function Cadastro() {
 
       <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
 
-        <div>
+        <>
           <label className="block text-sm font-medium text-gray-700 mb-1">Título</label>
           <input type="text" name="titulo" placeholder="Ex: God of War"
             value={formData.titulo} onChange={handleChange} onBlur={handleBlur}
             className={inputClass("titulo")} />
           {touched.titulo && erros.titulo && <span className="text-red-500 text-xs mt-1">{erros.titulo}</span>}
-        </div>
+        </>
 
-        <div>
+        <>
           <label className="block text-sm font-medium text-gray-700 mb-1">Gênero</label>
           <input type="text" name="genero" placeholder="Ex: Ação"
             value={formData.genero} onChange={handleChange} onBlur={handleBlur}
             className={inputClass("genero")} />
           {touched.genero && erros.genero && <span className="text-red-500 text-xs mt-1">{erros.genero}</span>}
-        </div>
+        </>
 
-        <div>
+        <>
           <label className="block text-sm font-medium text-gray-700 mb-1">Quantidade</label>
           <input type="number" name="quantidade" placeholder="Ex: 3"
             value={formData.quantidade} onChange={handleChange} onBlur={handleBlur}
             className={inputClass("quantidade")} />
           {touched.quantidade && erros.quantidade && <span className="text-red-500 text-xs mt-1">{erros.quantidade}</span>}
-        </div>
+        </>
 
-        <div>
+        <>
           <label className="block text-sm font-medium text-gray-700 mb-1">Plataforma</label>
           <input type="text" name="plataforma" placeholder="Ex: PS5"
             value={formData.plataforma} onChange={handleChange} onBlur={handleBlur}
             className={inputClass("plataforma")} />
           {touched.plataforma && erros.plataforma && <span className="text-red-500 text-xs mt-1">{erros.plataforma}</span>}
-        </div>
+        </>
 
         <div className="flex items-center gap-2 text-sm text-gray-600">
           <input type="checkbox" name="disponivel" id="disponivel"
