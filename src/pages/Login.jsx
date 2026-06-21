@@ -26,9 +26,7 @@ export default function Login() {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     const novoValor = type === "checkbox" ? checked : value;
-
     setFormData({ ...formData, [name]: novoValor });
-
     if (touched[name] && name !== "lembrarMe") {
       setErros((prev) => ({ ...prev, [name]: validarCampo(name, novoValor) }));
     }
@@ -46,12 +44,10 @@ export default function Login() {
     const campos = ["email", "senha"];
     const novosErros = {};
     const todosTocados = {};
-
     campos.forEach((name) => {
       todosTocados[name] = true;
       novosErros[name] = validarCampo(name, formData[name]);
     });
-
     setTouched(todosTocados);
     setErros(novosErros);
     return Object.values(novosErros).every((e) => e === "");
@@ -61,7 +57,6 @@ export default function Login() {
     e.preventDefault();
     setErroApi("");
     if (!validarTodos()) return;
-
     setCarregando(true);
     try {
       const usuario = await autenticar(formData.email, formData.senha);
@@ -74,57 +69,60 @@ export default function Login() {
     }
   };
 
+  const inputClass = (name) =>
+    `w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 transition-colors ${
+      touched[name] && erros[name]
+        ? "border-red-400 focus:ring-red-200"
+        : touched[name]
+        ? "border-green-400 focus:ring-green-200"
+        : "border-gray-300 focus:ring-blue-200"
+    }`;
+
   return (
-    <>
-      <h1>Login</h1>
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-8 w-full max-w-md">
+        <h1 className="text-2xl font-bold text-gray-800 mb-6">Login</h1>
 
-      <form onSubmit={handleSubmit} noValidate>
-        <section>
-          <label>E-mail</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="seuemail@exemplo.com"
-            value={formData.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          {touched.email && erros.email && <span>{erros.email}</span>}
-        </section>
+        <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
+          <>
+            <label className="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+            <input type="email" name="email" placeholder="seuemail@exemplo.com"
+              value={formData.email} onChange={handleChange} onBlur={handleBlur}
+              className={inputClass("email")} />
+            {touched.email && erros.email && (
+              <span className="text-red-500 text-xs mt-1 block">{erros.email}</span>
+            )}
+          </>
 
-        <section>
-          <label>Senha</label>
-          <input
-            type="password"
-            name="senha"
-            placeholder="••••••••"
-            value={formData.senha}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          {touched.senha && erros.senha && <span>{erros.senha}</span>}
-        </section>
+          <>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Senha</label>
+            <input type="password" name="senha" placeholder="••••••••"
+              value={formData.senha} onChange={handleChange} onBlur={handleBlur}
+              className={inputClass("senha")} />
+            {touched.senha && erros.senha && (
+              <span className="text-red-500 text-xs mt-1 block">{erros.senha}</span>
+            )}
+          </>
 
-        <label>
-          <input
-            type="checkbox"
-            name="lembrarMe"
-            checked={formData.lembrarMe}
-            onChange={handleChange}
-          />
-          Lembrar-me
-        </label>
+          <label className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
+            <input type="checkbox" name="lembrarMe" checked={formData.lembrarMe}
+              onChange={handleChange} className="w-4 h-4" />
+            Lembrar-me
+          </label>
 
-        {erroApi && <p>{erroApi}</p>}
+          {erroApi && <p className="text-red-500 text-sm">{erroApi}</p>}
 
-        <button type="submit" disabled={carregando}>
-          {carregando ? "Entrando..." : "Entrar"}
-        </button>
+          <button type="submit" disabled={carregando}
+            className="bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 disabled:opacity-60 transition-colors font-medium mt-2">
+            {carregando ? "Entrando..." : "Entrar"}
+          </button>
 
-        <button type="button" onClick={() => navigate("/registrar")}>
-          Criar conta
-        </button>
-      </form>
-    </>
+          <button type="button" onClick={() => navigate("/cadastro-usuario")}
+            className="border border-gray-300 text-gray-600 py-2 rounded-md hover:bg-gray-50 transition-colors text-sm">
+            Criar conta
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }
