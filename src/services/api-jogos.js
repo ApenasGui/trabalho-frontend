@@ -95,11 +95,15 @@ export async function atualizarJogo(id, dados) {
 }
 
 export async function registrarAluguel(usuarioId, alugueis) {
-  const response = await fetch(`${API_URL}/usuarios/${usuarioId}`, {
+  const response = await fetch(`http://localhost:3001/usuarios/${usuarioId}`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ alugueis }),
   });
+
+  console.log("status:", response.status);
+  console.log("usuarioId:", usuarioId);
+
   if (!response.ok) throw new Error("Erro ao registrar aluguel");
   return response.json();
 }

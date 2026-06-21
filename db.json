@@ -20,16 +20,16 @@
       "titulo": "God of War (2018)",
       "plataforma": "PS5",
       "genero": "Ação",
-      "quantidade": 1,
-      "disponivel": true,
+      "quantidade": 0,
+      "disponivel": false,
       "id": "hZ1lOEOmG5A"
     },
     {
       "titulo": "Minecraft",
       "plataforma": "XBOXS",
       "genero": "Sandbox",
-      "quantidade": 1,
-      "disponivel": true,
+      "quantidade": 0,
+      "disponivel": false,
       "id": "5c_NsqXMGHQ"
     },
     {
@@ -40,8 +40,8 @@
         "AÇÃO",
         "AVENTURA"
       ],
-      "quantidade": 1,
-      "disponivel": true,
+      "quantidade": 0,
+      "disponivel": false,
       "id": "8zNAlfLXkHc"
     },
     {
@@ -82,7 +82,18 @@
       "nome": "Guilherme Silva",
       "email": "guilherme@email.teste",
       "senha": "teste001",
-      "alugueis": [],
+      "alugueis": [
+        {
+          "jogoId": "8zNAlfLXkHc",
+          "titulo": "The Witcher 3",
+          "dataAluguel": "2026-06-21T18:49:01.267Z"
+        },
+        {
+          "jogoId": "5c_NsqXMGHQ",
+          "titulo": "Minecraft",
+          "dataAluguel": "2026-06-21T18:49:28.538Z"
+        }
+      ],
       "id": "q4-_vsdb_34"
     },
     {

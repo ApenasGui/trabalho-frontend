@@ -36,54 +36,42 @@ export default function Cadastro() {
   });
 
   const [touched, setTouched] = useState({});
-
   const [erros, setErros] = useState({});
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     const novoValor = type === "checkbox" ? checked : value;
+    const novoForm = { ...formData, [name]: novoValor };
 
-    setFormData({ ...formData, [name]: novoValor });
-
-    if(name === "disponivel"){
-      novoValor.disponivel = Number(value) > 0;
+    // atualiza disponivel automaticamente pela quantidade
+    if (name === "quantidade") {
+      novoForm.disponivel = Number(value) > 0;
     }
 
-    setFormData(novoValor)
+    setFormData(novoForm);
 
     if (touched[name] && camposObrigatorios.includes(name)) {
-      setErros((prev) => ({
-        ...prev,
-        [name]: validarCampo(name, novoValor),
-      }));
+      setErros((prev) => ({ ...prev, [name]: validarCampo(name, novoValor) }));
     }
   };
 
   const handleBlur = (e) => {
     const { name, value } = e.target;
-
     setTouched((prev) => ({ ...prev, [name]: true }));
-
     if (camposObrigatorios.includes(name)) {
-      setErros((prev) => ({
-        ...prev,
-        [name]: validarCampo(name, value),
-      }));
+      setErros((prev) => ({ ...prev, [name]: validarCampo(name, value) }));
     }
   };
 
   function validarTodos() {
     const novosErros = {};
     const todosTocados = {};
-
     camposObrigatorios.forEach((name) => {
       todosTocados[name] = true;
       novosErros[name] = validarCampo(name, formData[name]);
     });
-
     setTouched(todosTocados);
     setErros(novosErros);
-
     return Object.values(novosErros).every((e) => e === "");
   }
 
@@ -91,7 +79,7 @@ export default function Cadastro() {
     try {
       await addJogo(data);
       adicionarItem(data);
-      navigate("/cadastro");
+      navigate("/listagem");
     } catch (err) {
       setApiError(err.response?.data ?? "Erro ao salvar");
     }
@@ -100,101 +88,71 @@ export default function Cadastro() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setApiError("");
-    if (validarTodos()) {
-      salvar(formData);
-    }
+    if (validarTodos()) salvar(formData);
   };
 
   const inputClass = (name) =>
-    `border p-2 rounded w-full ${
+    `w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 transition-colors ${
       touched[name] && erros[name]
-        ? "border-red-500 focus:outline-red-500"
+        ? "border-red-400 focus:ring-red-200"
         : touched[name]
-        ? "border-green-500 focus:outline-green-500"
-        : "border-gray-300"
+        ? "border-green-400 focus:ring-green-200"
+        : "border-gray-300 focus:ring-blue-200"
     }`;
 
   return (
-    <>
-      <h1>Cadastro de itens</h1>
-      <form onSubmit={handleSubmit} noValidate>
+    <div className="max-w-md mx-auto mt-8 bg-white border border-gray-200 rounded-xl shadow-sm p-8">
+      <h1 className="text-2xl font-bold text-gray-800 mb-6">Cadastro de jogo</h1>
 
-        <>
-          <input
-            type="text"
-            name="titulo"
-            placeholder="Título"
-            value={formData.titulo}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className={inputClass("titulo")}
-          />
-          {touched.titulo && erros.titulo && (
-            <span className="text-red-500 text-sm">{erros.titulo}</span>
-          )}
-        </>
+      <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
 
-        <>
-          <input
-            type="text"
-            name="genero"
-            placeholder="Gênero"
-            value={formData.genero}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className={inputClass("genero")}
-          />
-          {touched.genero && erros.genero && (
-            <span className="text-red-500 text-sm">{erros.genero}</span>
-          )}
-        </>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Título</label>
+          <input type="text" name="titulo" placeholder="Ex: God of War"
+            value={formData.titulo} onChange={handleChange} onBlur={handleBlur}
+            className={inputClass("titulo")} />
+          {touched.titulo && erros.titulo && <span className="text-red-500 text-xs mt-1">{erros.titulo}</span>}
+        </div>
 
-        <>
-          <input
-            type="number"
-            name="quantidade"
-            placeholder="Quantidade"
-            value={formData.quantidade}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className={inputClass("quantidade")}
-          />
-          {touched.quantidade && erros.quantidade && (
-            <span className="text-red-500 text-sm">{erros.quantidade}</span>
-          )}
-        </>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Gênero</label>
+          <input type="text" name="genero" placeholder="Ex: Ação"
+            value={formData.genero} onChange={handleChange} onBlur={handleBlur}
+            className={inputClass("genero")} />
+          {touched.genero && erros.genero && <span className="text-red-500 text-xs mt-1">{erros.genero}</span>}
+        </div>
 
-        <>
-          <input
-            type="text"
-            name="plataforma"
-            placeholder="Plataforma"
-            value={formData.plataforma}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className={inputClass("plataforma")}
-          />
-          {touched.plataforma && erros.plataforma && (
-            <span className="text-red-500 text-sm">{erros.plataforma}</span>
-          )}
-        </>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Quantidade</label>
+          <input type="number" name="quantidade" placeholder="Ex: 3"
+            value={formData.quantidade} onChange={handleChange} onBlur={handleBlur}
+            className={inputClass("quantidade")} />
+          {touched.quantidade && erros.quantidade && <span className="text-red-500 text-xs mt-1">{erros.quantidade}</span>}
+        </div>
 
-        <>
-          <label>
-            <input
-              type="checkbox"
-              name="disponivel"
-              checked={formData.disponivel}
-              onChange={handleChange}
-            />
-            {" "}Disponível
-          </label>
-        </>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Plataforma</label>
+          <input type="text" name="plataforma" placeholder="Ex: PS5"
+            value={formData.plataforma} onChange={handleChange} onBlur={handleBlur}
+            className={inputClass("plataforma")} />
+          {touched.plataforma && erros.plataforma && <span className="text-red-500 text-xs mt-1">{erros.plataforma}</span>}
+        </div>
 
-        {apiError && <p className="text-red-600">{apiError}</p>}
+        <div className="flex items-center gap-2 text-sm text-gray-600">
+          <input type="checkbox" name="disponivel" id="disponivel"
+            checked={formData.disponivel} onChange={handleChange}
+            className="w-4 h-4" />
+          <label htmlFor="disponivel">Disponível</label>
+        </div>
 
-        <button type="submit">Salvar</button>
+        {apiError && <p className="text-red-500 text-sm">{apiError}</p>}
+
+        <button type="submit"
+          className="bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors font-medium mt-2">
+          Salvar
+        </button>
+
       </form>
-    </>
+    </div>
   );
 }
