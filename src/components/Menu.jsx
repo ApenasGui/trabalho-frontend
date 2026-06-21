@@ -2,10 +2,10 @@ import { useAuth } from "../contexts/AuthContext";
 import { Link, NavLink } from "react-router-dom";
 
 export default function Menu(){
-    const { user } = useAuth();
+    const { usuario } = useAuth();
 
     return <nav>
-        <h1>Bem vindo, {user.nome} !</h1>
+        <h1>Bem vindo, {usuario.nome} !</h1>
         <ul>
             <li>
                 <NavLink to="/">Home</NavLink>
@@ -18,6 +18,9 @@ export default function Menu(){
             </li>
             <li>
                 <Link to="/login">Login</Link>
+            </li>
+            <li>
+                <Link to="/meus-alugueis">Meus aluguéis</Link>
             </li>
         </ul>
     </nav>

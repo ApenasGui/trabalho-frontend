@@ -4,32 +4,32 @@
       "titulo": "The Last of Us Part I",
       "plataforma": "PS5",
       "genero": "Aventura",
-      "quantidade": 2,
-      "disponivel": true,
+      "quantidade": 0,
+      "disponivel": false,
       "id": "fO-ppTeg6dI"
     },
     {
       "titulo": "Cyberpunk 2077",
       "plataforma": "PS5",
       "genero": "RPG",
-      "quantidade": 1,
-      "disponivel": false,
+      "quantidade": 2,
+      "disponivel": true,
       "id": "NfYpGfVp1c8"
     },
     {
       "titulo": "God of War (2018)",
       "plataforma": "PS5",
       "genero": "Ação",
-      "quantidade": 2,
-      "disponivel": true,
+      "quantidade": 0,
+      "disponivel": false,
       "id": "hZ1lOEOmG5A"
     },
     {
       "titulo": "Minecraft",
       "plataforma": "XBOXS",
       "genero": "Sandbox",
-      "quantidade": 5,
-      "disponivel": true,
+      "quantidade": 0,
+      "disponivel": false,
       "id": "5c_NsqXMGHQ"
     },
     {
@@ -40,33 +40,68 @@
         "AÇÃO",
         "AVENTURA"
       ],
-      "quantidade": 1,
-      "disponivel": true,
+      "quantidade": 0,
+      "disponivel": false,
       "id": "8zNAlfLXkHc"
     },
     {
       "titulo": "Banishers of New Eden",
       "genero": "Ação e Rpg",
-      "quantidade": "2",
+      "quantidade": 0,
       "plataforma": "PS5",
-      "disponivel": true,
+      "disponivel": false,
       "id": "tJImY5XwBYg"
     },
     {
       "titulo": "Slime Rancher",
       "genero": "Simulador",
-      "quantidade": "3",
+      "quantidade": 0,
       "plataforma": "PC e PS4",
-      "disponivel": true,
+      "disponivel": false,
       "id": "Hsz1ODZSlng"
     },
     {
       "titulo": "teste",
       "genero": "teste",
-      "quantidade": "1",
+      "quantidade": 0,
       "plataforma": "teste",
-      "disponivel": true,
+      "disponivel": false,
       "id": "If6967ERC78"
+    },
+    {
+      "titulo": "Yakuza 0",
+      "genero": "Beat'em Up",
+      "quantidade": 1,
+      "plataforma": "PS4",
+      "disponivel": false,
+      "id": "zgCw-EprXAg"
+    }
+  ],
+  "usuarios": [
+    {
+      "nome": "Guilherme Silva",
+      "email": "guilherme@email.teste",
+      "senha": "teste001",
+      "alugueis": [
+        {
+          "jogoId": "8zNAlfLXkHc",
+          "titulo": "The Witcher 3",
+          "dataAluguel": "2026-06-21T18:49:01.267Z"
+        },
+        {
+          "jogoId": "5c_NsqXMGHQ",
+          "titulo": "Minecraft",
+          "dataAluguel": "2026-06-21T18:49:28.538Z"
+        }
+      ],
+      "id": "q4-_vsdb_34"
+    },
+    {
+      "nome": "Pedrinho",
+      "email": "pedro@email.teste",
+      "senha": "123456789",
+      "alugueis": [],
+      "id": "giCrS0R6ZRg"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
